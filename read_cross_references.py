@@ -30,7 +30,7 @@ def verse_str_to_verse_pointer(verse_str: str) -> VersePointer:
     )
 
 
-def raw_interp_to_objects(cross_references: List[Tuple[str, str, int]]) -> List[OpenBibleCrossReference]:
+def raw_interp_to_cross_references(cross_references: List[Tuple[str, str, int]]) -> List[OpenBibleCrossReference]:
     """Converts the raw read of cross_references to a cleaner input
 
     :param cross_references: The return of raw_interp()
@@ -41,5 +41,3 @@ def raw_interp_to_objects(cross_references: List[Tuple[str, str, int]]) -> List[
         to_verse=verse_str_to_verse_pointer(cross_reference[1]),
         votes=cross_reference[2]
     ) for cross_reference in cross_references]
-
-
