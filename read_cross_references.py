@@ -30,6 +30,11 @@ def verse_str_to_verse_pointer(verse_str: str) -> VersePointer:
     )
 
 
+def verse_pointer_to_str(verse_pointer: VersePointer) -> str:
+    """Reverses verse_str_to_verse_pointer"""
+    return f"{verse_pointer.book_name}.{verse_pointer.chapter}.{verse_pointer.verse}"
+
+
 def raw_interp_to_cross_references(cross_references: List[Tuple[str, str, int]]) -> List[OpenBibleCrossReference]:
     """Converts the raw read of cross_references to a cleaner input
 

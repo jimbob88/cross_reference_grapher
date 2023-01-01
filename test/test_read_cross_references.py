@@ -1,7 +1,7 @@
 import unittest
 
 from bible_objects import OpenBibleCrossReference, VersePointer
-from read_cross_references import raw_interp, raw_interp_to_cross_references, verse_str_to_verse_pointer
+from read_cross_references import raw_interp, raw_interp_to_cross_references, verse_str_to_verse_pointer, verse_pointer_to_str
 
 
 class RawInterp(unittest.TestCase):
@@ -32,6 +32,10 @@ class RawInterp(unittest.TestCase):
         example = "Gen.1.1"
         self.assertEqual(verse_str_to_verse_pointer(example), VersePointer(book_name='Gen', chapter=1, verse=1))
 
+    def test_verse_pointer_to_str(self):
+        example = VersePointer(book_name='Gen', chapter=1, verse=1)
+        self.assertEqual(verse_pointer_to_str(example), "Gen.1.1")
+        
     def test_raw_interp_to_objects(self):
         interp = [
             ("Gen.1.1", "Rom.11.36", 36),
