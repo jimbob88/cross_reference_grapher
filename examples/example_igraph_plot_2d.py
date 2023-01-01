@@ -1,3 +1,6 @@
+"""
+Using cairocffi for plotting
+"""
 import igraph
 
 
