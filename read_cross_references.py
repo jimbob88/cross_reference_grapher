@@ -24,6 +24,9 @@ def verse_str_to_verse_pointer(verse_str: str) -> VersePointer:
 
     :param verse_str: For example 'Gen.1.1'
     """
+    # print(verse_str)
+    if '-' in verse_str:
+        verse_str = verse_str.split('-')[0]
     book, chapter, verse = verse_str.split('.')
     return VersePointer(
         book_name=book, chapter=int(chapter), verse=int(verse)

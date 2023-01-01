@@ -12,7 +12,7 @@ def recursive_search(from_verse: VersePointer,
     :param from_verse: The verse to start the search from
     :param cross_references: The Open Bible Database of Cross-References
     :return: Tuple (id_map: the id of each VersePointer is its index,
-            the route i.e. (1, 2) means verse idx 1 goes to verse idx 2.
+            the edges i.e. (1, 2) means verse idx 1 goes to verse idx 2.
     """
     stack = [from_verse]
     visited: List[VersePointer] = []
