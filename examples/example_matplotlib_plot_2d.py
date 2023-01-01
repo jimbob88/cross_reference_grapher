@@ -22,7 +22,7 @@ def main():
         # vertex_color=["steelblue" if gender == "M" else "salmon" for gender in g.vs["gender"]],
         vertex_color="steelblue",
         vertex_frame_color="white",
-        vertex_label=igraph_model.vs["verse"],
+        vertex_label=igraph_model.vs["all"],
         vertex_label_size=2,
     )
     plt.show()
