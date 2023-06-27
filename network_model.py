@@ -32,3 +32,29 @@ def recursive_search(from_verse: VersePointer,
             nodes.append((visited.index(from_verse), visited.index(to_verse)))
 
     return visited, nodes
+
+
+def depth_limited_recursive_search(from_verse: VersePointer,
+                                   cross_references: Iterable[OpenBibleCrossReference],
+                                   depth_limit: int = 5
+                                   ) -> Tuple[List[VersePointer], List[Tuple[int, int]]]:
+    stack = [(0, from_verse)]
+    visited: List[VersePointer] = []
+    nodes = []
+
+    while stack:
+        depth, from_verse = stack.pop()
+        if depth > depth_limit:
+            continue
+        if from_verse not in visited:
+            visited.append(from_verse)
+        refs = [ref.to_verse for ref in find_from_verse(from_verse, cross_references)]
+
+        stack.extend([(depth + 1, ref) for ref in refs if ref not in visited])
+
+        for to_verse in refs:
+            if to_verse not in visited:
+                visited.append(to_verse)
+            nodes.append((visited.index(from_verse), visited.index(to_verse)))
+
+    return visited, nodes
