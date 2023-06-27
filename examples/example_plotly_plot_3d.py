@@ -1,13 +1,13 @@
 """
 Plotly 3d Plot with a unique colour for each book of the bible
 """
+from pathlib import Path
 from typing import Sequence, Dict
 
 import igraph
 
 from graph_to_3d_coordinates import to_3d_points
 import plotly.graph_objects as go
-import plotly.io as pio
 import seaborn as sns
 
 
@@ -51,7 +51,8 @@ def main():
     data = [node_trace, edge_trace]
     fig = go.Figure(data=data, layout=None)
 
-    pio.write_html(fig, file='out.html', auto_open=True)
+    html = fig.to_html()
+    Path('out.html').write_text(html, encoding='utf-8')
 
 
 if __name__ == '__main__':
