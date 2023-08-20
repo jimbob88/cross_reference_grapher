@@ -1,6 +1,6 @@
 # Cross-Reference Grapher
 
-The following is project which doesn't necessarily have anything to do with visual graphs. Although if you check out the `./examples/` directory you
+The following is a project which doesn't necessarily have anything to do with visual graphs. Although, if you check out the `./examples/` directory, you
 can see it used in this way! This project concerns graphs in the Computer Science sense. It connects nodes (verses) using arcs to other nodes (other
 verses). For example, when Jesus says "Eli Eli Lama Sabachthani?" at Golgotha we know this occurs at Matthew 27:46 and Mark 15:34. Therefore, we would
 have two nodes "Matthew 27:46" and "Mark 15:34" which are connected by an arc. We also know Jesus is quoting Psalm 22:1. So we would have another node
